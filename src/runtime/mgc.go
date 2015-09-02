@@ -59,7 +59,7 @@
 // All phase action must be benign in the presence of a change.
 // Starting with GCoff
 // GCoff to GCscan
-//     GSscan scans stacks and globals greying them and never marks an object black.
+//     GCscan scans stacks and globals greying them and never marks an object black.
 //     Once all the P's are aware of the new phase they will scan gs on preemption.
 //     This means that the scanning of preempted gs can't start until all the Ps
 //     have acknowledged.
@@ -78,7 +78,7 @@
 // GCmark to GCmarktermination
 //     The only change here is that we start allocating black so the Ps must acknowledge
 //     the change before we begin the termination algorithm
-// GCmarktermination to GSsweep
+// GCmarktermination to GCsweep
 //     Object currently on the freelist must be marked black for this to work.
 //     Are things on the free lists black or white? How does the sweep phase work?
 
